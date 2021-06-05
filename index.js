@@ -81,7 +81,7 @@ app.post('/addresses/transactions', asyncHandler(async (req, res, next) => {
   addresses = _.uniq(addresses)
 
   const response = await Bluebird.map(addresses, address => {
-    return electrs.get(`/address/${address}/txs/chain`).then(response => ({
+    return electrs.get(`/address/${address}/txs`).then(response => ({
       address,
       transaction: response.data
     }))

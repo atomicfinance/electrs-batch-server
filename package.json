@@ -8,7 +8,7 @@
   },
   "scripts": {
     "test": "standard",
-    "start": "node index.js"
+    "start": "node -r dotenv/config index.js"
   },
   "author": "Liquality <info@liquality.io>",
   "license": "MIT",
@@ -25,6 +25,7 @@
     "lodash": "^4.17.20"
   },
   "devDependencies": {
+    "dotenv": "^10.0.0",
     "standard": "^14.3.4"
   }
 }
