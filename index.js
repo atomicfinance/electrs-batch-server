@@ -41,7 +41,7 @@ app.set('etag', false)
 
 app.post('/addresses', asyncHandler(async (req, res, next) => {
   let { addresses } = req.body
-  if (!addresses || !_.isArray(addresses) || addresses.length === 0) {
+  if (!addresses || !_.isArray(addresses)) {
     return res.status(400).json({ error: 'Invalid "addresses" field' })
   }
 
@@ -56,7 +56,7 @@ app.post('/addresses', asyncHandler(async (req, res, next) => {
 
 app.post('/addresses/utxo', asyncHandler(async (req, res, next) => {
   let { addresses } = req.body
-  if (!addresses || !_.isArray(addresses) || addresses.length === 0) {
+  if (!addresses || !_.isArray(addresses)) {
     return res.status(400).json({ error: 'Invalid "addresses" field' })
   }
 
@@ -74,7 +74,7 @@ app.post('/addresses/utxo', asyncHandler(async (req, res, next) => {
 
 app.post('/addresses/transactions', asyncHandler(async (req, res, next) => {
   let { addresses } = req.body
-  if (!addresses || !_.isArray(addresses) || addresses.length === 0) {
+  if (!addresses || !_.isArray(addresses)) {
     return res.status(400).json({ error: 'Invalid "addresses" field' })
   }
 
